@@ -105,7 +105,7 @@ export const login = async (req, res) => {
       .cookie("token", token, {
         maxAge: 1 * 24 * 60 * 1000,
         httpsOnly: true,
-         secure"true",
+        secure:true,
         sameSite: "none",
       })
       .json({
@@ -123,7 +123,7 @@ export const logout = async (req, res) => {
     return res.status(200).cookie("token", "", { maxAge: 0 }).json({
       message: "Logged out successfully.",
       success: true,
-      secure"true",
+      secure: true,
       sameSite: "none",
     });
   } catch (error) {
